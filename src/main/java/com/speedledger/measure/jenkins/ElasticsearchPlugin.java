@@ -26,9 +26,9 @@ public class ElasticsearchPlugin extends Plugin {
 
     @Override
     public void configure(StaplerRequest req, JSONObject jsonObject) throws IOException, ServletException, Descriptor.FormException {
-        String url = jsonObject.getString("url");
-        String indexName = jsonObject.getString("indexName");
-        String typeName = jsonObject.getString("typeName");
+        String url = jsonObject.getString("elasticsearchUrl");
+        String indexName = jsonObject.getString("elasticsearchIndexName");
+        String typeName = jsonObject.getString("elasticsearchTypeName");
         config = new Config(url, indexName, typeName);
         save();
     }
