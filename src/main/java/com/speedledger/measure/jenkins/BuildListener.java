@@ -42,7 +42,7 @@ public class BuildListener extends RunListener<Run> {
     }
 
     public synchronized void loadConfig() {
-        final Plugin plugin = Jenkins.getInstance().getPlugin("jenkins-elasticsearch");
+        final Plugin plugin = Jenkins.getInstance().getPlugin("elasticsearch-jenkins");
         if (plugin instanceof ElasticsearchPlugin) {
             ElasticsearchPlugin elasticsearchPlugin = (ElasticsearchPlugin) plugin;
 
