@@ -16,7 +16,7 @@ Building
 ### Setup
 
 In order to build the plugin Maven must be able to pull the necessary dependencies from Jenkins repository.
-[docs/settings.xml](settings.xml) contains the necessary settings.
+[settings.xml](docs/settings.xml) contains the necessary settings.
 
 ### Build
 
