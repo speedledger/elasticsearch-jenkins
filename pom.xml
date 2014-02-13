@@ -8,6 +8,7 @@
     </parent>
 
     <name>Elasticsearch plugin</name>
+    <url>https://github.com/speedledger/elasticsearch-jenkins</url>
     <groupId>com.speedledger.measure</groupId>
     <artifactId>elasticsearch-jenkins</artifactId>
     <version>1.0-SNAPSHOT</version>
