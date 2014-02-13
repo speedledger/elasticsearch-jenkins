@@ -1,7 +1,7 @@
 Elasticsearch Jenkins plugin
 ============================
 
-Reports Jenkins build information to Elastichsearch on build completion.
+Reports Jenkins build information to Elasticsearch on build completion.
 
 Information reported includes:
 * Name of the build.
@@ -31,7 +31,7 @@ Launch Jenkins and go to *Manage Jenkins*, *Manage Plugins*, *Advanced*. Use *Up
 Usage
 -----
 
-Configure the plugin under 'Configure System'.
+Configure the plugin under *Configure System*.
 * `URL` - HTTP URL to an Elasticsearch instance, example: `https://username:password@cluster01/`.
 * `Index name` - Name of the index to use, example: `jenkins`.
 * `Type name` - Name of the type, example: `build`.
