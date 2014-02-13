@@ -2,6 +2,7 @@ Elasticsearch Jenkins plugin
 ============================
 
 Reports Jenkins build information to Elastichsearch on build completion.
+
 Information reported includes:
 * Name of the build.
 * Start time of the build.
@@ -25,7 +26,7 @@ Run `mvn clean install package`.
 Installation
 ------------
 
-Launch Jenkins and go to 'Manage Jenkins', 'Manage Plugins', 'Advanced'. Use 'Upload Plugin' to upload the hpi file.
+Launch Jenkins and go to *Manage Jenkins*, *Manage Plugins*, *Advanced*. Use *Upload Plugin* to upload the hpi file.
 
 Usage
 -----
