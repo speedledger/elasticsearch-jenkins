@@ -56,6 +56,8 @@ public class BuildListener extends RunListener<Run> {
                 LOG.info("Applying new configuration: " + newConfig);
                 jestClient.setServers(Sets.newHashSet(config.getUrl()));
             }
+        } else {
+            LOG.info("Could not find correct plugin");
         }
     }
 
@@ -71,12 +73,16 @@ public class BuildListener extends RunListener<Run> {
 
                 final JestResult result = jestClient.execute(index);
 
-                if (!result.isSucceeded()) {
-                    LOG.warning("Failed to index Jenkins build on ElasticSearch: " + build + " Got error message: " + result.getErrorMessage());
+                if (result.isSucceeded()) {
+                    LOG.fine("Sent build to Elasticsearch: " + build);
+                } else {
+                    LOG.warning("Failed to index build, got error message: " + result.getErrorMessage());
                 }
             } catch (Exception e) {
                 LOG.log(Level.SEVERE, "Error", e);
             }
+        } else {
+            LOG.fine("The configuration is not valid, can not index the build");
         }
     }
 

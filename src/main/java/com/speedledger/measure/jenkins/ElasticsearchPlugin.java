@@ -8,6 +8,7 @@ import org.kohsuke.stapler.StaplerRequest;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 /**
  * Elasticsearch plugin to Jenkins.
@@ -16,12 +17,15 @@ import java.io.IOException;
  * This class only handles loading and saving the configuration of Elasticsearch, see {@link Config}.
  */
 public class ElasticsearchPlugin extends Plugin {
+    private static final Logger LOG = Logger.getLogger(ElasticsearchPlugin.class.getName());
+
     private Config config;
 
     @Override
     public void start() throws Exception {
         Items.XSTREAM.registerConverter(new Config.ConverterImpl());
         load();
+        LOG.fine("Loading config: " + config);
     }
 
     @Override
@@ -30,6 +34,7 @@ public class ElasticsearchPlugin extends Plugin {
         String indexName = jsonObject.getString("elasticsearchIndexName");
         String typeName = jsonObject.getString("elasticsearchTypeName");
         config = new Config(url, indexName, typeName);
+        LOG.fine("Saving config: " + config);
         save();
     }
 
