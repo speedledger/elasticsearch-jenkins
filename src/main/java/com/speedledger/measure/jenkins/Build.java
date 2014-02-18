@@ -8,7 +8,7 @@ import java.util.Map;
 public class Build {
     private int number;
     private String jobName;
-    private boolean successful;
+    private String result;
     private long startTime;
     private long duration;
     private Map<String, String> environment;
@@ -17,10 +17,10 @@ public class Build {
     public Build() {
     }
 
-    public Build(int number, String jobName, boolean successful, long startTime, long duration, Map<String, String> environment, Map<Object, Object> systemProperties) {
+    public Build(int number, String jobName, String result, long startTime, long duration, Map<String, String> environment, Map<Object, Object> systemProperties) {
         this.number = number;
         this.jobName = jobName;
-        this.successful = successful;
+        this.result = result;
         this.startTime = startTime;
         this.duration = duration;
         this.environment = environment;
@@ -43,12 +43,12 @@ public class Build {
         this.number = number;
     }
 
-    public boolean isSuccessful() {
-        return successful;
+    public String getResult() {
+        return result;
     }
 
-    public void setSuccessful(boolean successful) {
-        this.successful = successful;
+    public void setResult(String result) {
+        this.result = result;
     }
 
     public long getStartTime() {
@@ -88,7 +88,7 @@ public class Build {
         return "Build{" +
                 "number=" + number +
                 ", jobName='" + jobName + '\'' +
-                ", successful=" + successful +
+                ", result='" + result + '\'' +
                 ", startTime=" + startTime +
                 ", duration=" + duration +
                 ", environment=" + environment +

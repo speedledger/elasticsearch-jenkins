@@ -101,10 +101,10 @@ public class BuildListener extends RunListener<Run> {
         final Build build = new Build();
         build.setDuration(run.getDuration());
         build.setJobName(job.getFullName());
-        build.setSuccessful(run.getResult().isCompleteBuild());
+        build.setResult(run.getResult().toString());
         build.setStartTime(run.getStartTimeInMillis());
         build.setNumber(run.getNumber());
-        build.setEnvironment(new HashMap<String, String>(environment));
+        build.setEnvironment(environment);
         build.setSystemProperties(System.getProperties());
 
         return build;

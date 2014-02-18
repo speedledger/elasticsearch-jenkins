@@ -7,7 +7,7 @@ Information reported includes:
 * Name of the build.
 * Start time of the build.
 * Duration of the build.
-* If the build was successful or not.
+* Result of the build: success, failed, aborted etc.
 * System properties.
 * Environment variables.
 
