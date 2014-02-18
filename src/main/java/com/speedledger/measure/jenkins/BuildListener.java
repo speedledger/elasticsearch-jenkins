@@ -28,7 +28,6 @@ import java.util.logging.Logger;
 @Extension
 public class BuildListener extends RunListener<Run> {
     private static final Logger LOG = Logger.getLogger(BuildListener.class.getName());
-
     private final JestClient jestClient;
     private Config config;
 
@@ -67,8 +66,9 @@ public class BuildListener extends RunListener<Run> {
 
         final boolean validConfig = config != null && config.nonEmptyValues();
         if (validConfig) {
+            final Build build = createBuild(run, listener);
+
             try {
-                final Build build = createBuild(run, listener);
                 final Index index = new Index.Builder(build).index(config.getIndexName()).type(config.getTypeName()).build();
 
                 final JestResult result = jestClient.execute(index);
@@ -79,7 +79,7 @@ public class BuildListener extends RunListener<Run> {
                     LOG.warning("Failed to index build, got error message: " + result.getErrorMessage());
                 }
             } catch (Exception e) {
-                LOG.log(Level.SEVERE, "Error", e);
+                LOG.log(Level.SEVERE, "Error when sending build data: " + build, e);
             }
         } else {
             LOG.fine("The configuration is not valid, can not index the build");
