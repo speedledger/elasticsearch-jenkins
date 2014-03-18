@@ -8,8 +8,10 @@ import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 
 /**
  * Elasticsearch configuration.
+ * Should contain information needed to establish connection to Elasticsearch and where to index data.
  */
 public class Config {
+    // HTTP URL to Elasticsearch
     private String url;
     private String indexName;
     private String typeName;
