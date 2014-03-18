@@ -36,3 +36,6 @@ Configure the plugin under *Configure System*.
 * `Index name` - Name of the index to use, example: `jenkins`.
 * `Type name` - Name of the type, example: `build`.
 
+### Mapping
+
+An example mapping for Elasticsearch can be found in [mapping.xml](docs/mapping.json).

@@ -1,0 +1,34 @@
+{
+	"<name-of-type>": {
+        "_timestamp": {
+            "enabled": true,
+            "store": true
+        },
+		"properties": {
+			"duration": {
+				"type": "long"
+			},
+			"environment": {
+				"type": "nested"
+			},
+			"jobName": {
+				"index": "not_analyzed",
+				"type": "string"
+			},
+			"number": {
+				"type": "long"
+			},
+			"result": {
+				"index": "not_analyzed",
+				"type": "string"
+			},
+			"startTime": {
+				"format": "dateOptionalTime",
+				"type": "date"
+			},
+			"systemProperties": {
+				"type": "nested"
+			}
+		}
+	}
+}
