@@ -17,7 +17,7 @@ Building
 ### Setup
 
 In order to build the plugin Maven must be able to pull the necessary dependencies from Jenkins repository.
-[settings.xml](docs/settings.xml) contains the necessary settings.
+[settings.xml](docs/settings.xml) contains the necessary Maven settings.
 
 ### Build
 
@@ -38,4 +38,6 @@ Configure the plugin under *Configure System*.
 
 ### Mapping
 
-An example mapping for Elasticsearch can be found in [mapping.xml](docs/mapping.json).
+[mapping.json](docs/mapping.json) contains an example
+[mapping](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/mapping.html) for your index in
+Elasticsearch.
