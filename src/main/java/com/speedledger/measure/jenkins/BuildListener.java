@@ -12,6 +12,7 @@ import io.searchbox.client.JestClient;
 import io.searchbox.client.JestClientFactory;
 import io.searchbox.client.JestResult;
 import io.searchbox.client.config.ClientConfig;
+import io.searchbox.client.config.HttpClientConfig;
 import io.searchbox.core.Index;
 import jenkins.model.Jenkins;
 
@@ -34,8 +35,13 @@ public class BuildListener extends RunListener<Run> {
     public BuildListener() {
         LOG.info("Initializing");
 
-        final JestClientFactory factory = new JestClientFactory();
+    /*    final JestClientFactory factory = new JestClientFactory();
         ClientConfig clientConfig = new ClientConfig.Builder(new ArrayList<String>()).multiThreaded(true).build();
+        factory.setClientConfig(clientConfig);
+        jestClient = factory.getObject();
+    }*/
+            final JestClientFactory factory = new JestClientFactory();
+        HttpClientConfig clientConfig = new HttpClientConfig.Builder(new ArrayList<String>()).multiThreaded(true).build();
         factory.setClientConfig(clientConfig);
         jestClient = factory.getObject();
     }
