@@ -42,7 +42,7 @@ public class BuildListener extends RunListener<Run> {
     }*/
             final JestClientFactory factory = new JestClientFactory();
         HttpClientConfig clientConfig = new HttpClientConfig.Builder(new ArrayList<String>()).multiThreaded(true).build();
-        factory.setClientConfig(clientConfig);
+        factory.setHttpClientConfig(clientConfig);
         jestClient = factory.getObject();
     }
 
