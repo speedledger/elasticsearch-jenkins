@@ -17,7 +17,7 @@ public class Build {
     public Build() {
     }
 
-    public Build(int number, String jobName, String result, long startTime, long duration, Map<String, String> environment, Map<Object, Object> systemProperties) {
+    public Build(int number, String jobName, String result, long startTime, long duration, Map<String, String> environment) {
         this.number = number;
         this.jobName = jobName;
         this.result = result;
@@ -25,6 +25,7 @@ public class Build {
         this.duration = duration;
         this.environment = environment;
         this.systemProperties = systemProperties;
+        this.timestamp = timestamp
     }
 
     public String getJobName() {
@@ -92,7 +93,6 @@ public class Build {
                 ", startTime=" + startTime +
                 ", duration=" + duration +
                 ", environment=" + environment +
-                ", systemProperties=" + systemProperties +
                 '}';
     }
 }
