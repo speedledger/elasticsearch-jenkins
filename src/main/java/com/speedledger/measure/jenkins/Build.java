@@ -23,7 +23,7 @@ public class Build {
         this.startTime = startTime;
         this.duration = duration;
         this.environment = environment;
-        this.timestamp = timestamp
+        this.timestamp = timestamp;
     }
 
     public String getJobName() {
@@ -74,13 +74,6 @@ public class Build {
         this.environment = environment;
     }
 
-    public Map<Object, Object> getSystemProperties() {
-        return systemProperties;
-    }
-
-    public void setSystemProperties(Map<Object, Object> systemProperties) {
-        this.systemProperties = systemProperties;
-    }
 
     @Override
     public String toString() {
