@@ -12,7 +12,6 @@ public class Build {
     private long startTime;
     private long duration;
     private Map<String, String> environment;
-    private Map<Object, Object> systemProperties;
 
     public Build() {
     }
@@ -24,7 +23,6 @@ public class Build {
         this.startTime = startTime;
         this.duration = duration;
         this.environment = environment;
-        this.systemProperties = systemProperties;
         this.timestamp = timestamp
     }
 
