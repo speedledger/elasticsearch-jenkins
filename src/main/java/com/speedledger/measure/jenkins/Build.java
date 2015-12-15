@@ -10,36 +10,6 @@ import java.util.Calendar;
  public class BuildData {
   // ISO 8601 date format
   public transient static final DateFormat DATE_FORMATTER = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-
-  public static class TestData {
-    int totalCount, skipCount, failCount;
-    List<String> failedTests;
-
-    public TestData() {
-      this(null);
-    }
-
-    public TestData(Action action) {
-      AbstractTestResultAction<?> testResultAction = null;
-      if (action instanceof AbstractTestResultAction) {
-        testResultAction = (AbstractTestResultAction<?>) action;
-      }
-
-      if (testResultAction == null) {
-        totalCount = skipCount = failCount = 0;
-        failedTests = Collections.emptyList();
-        return;
-      }
-
-      totalCount = testResultAction.getTotalCount();
-      skipCount = testResultAction.getSkipCount();
-      failCount = testResultAction.getFailCount();
-
-      failedTests = new ArrayList<String>(testResultAction.getFailedTests().size());
-      for (TestResult result : testResultAction.getFailedTests()) {
-        failedTests.add(result.getFullName());
-      }
-    }
   }
 
 public class Build {
