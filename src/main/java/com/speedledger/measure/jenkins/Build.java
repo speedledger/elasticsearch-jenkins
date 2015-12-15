@@ -6,7 +6,7 @@ import java.util.Map;
  * Jenkins build.
  */
 public class Build {
-    private String timestamp
+    private String timestamp;
     private int number;
     private String jobName;
     private String result;
