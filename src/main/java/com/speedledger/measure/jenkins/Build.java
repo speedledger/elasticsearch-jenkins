@@ -82,9 +82,13 @@ public class Build {
         this.environment = environment;
     }
     
+    public String getTimestamp() {
+      return timestamp;
+    }
+    
     public void setTimestamp(Calendar timestamp) {
          this.timestamp = DATE_FORMATTER.format(timestamp.getTime());
-  }
+    }
 
 
     @Override
