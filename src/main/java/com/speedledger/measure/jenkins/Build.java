@@ -6,13 +6,9 @@ import java.util.Calendar;
 /**
  * Jenkins build.
  */
- 
- public class BuildData {
-  // ISO 8601 date format
-  public transient static final DateFormat DATE_FORMATTER = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-  }
 
 public class Build {
+    public transient static final DateFormat DATE_FORMATTER = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
     private String timestamp;
     private int number;
     private String jobName;
