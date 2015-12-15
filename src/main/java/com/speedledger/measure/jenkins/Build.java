@@ -23,7 +23,6 @@ public class Build {
         this.startTime = startTime;
         this.duration = duration;
         this.environment = environment;
-        this.timestamp = timestamp;
     }
 
     public String getJobName() {
