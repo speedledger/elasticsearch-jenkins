@@ -115,7 +115,7 @@ public class BuildListener extends RunListener<Run> {
         build.setStartTime(run.getStartTimeInMillis());
         build.setNumber(run.getNumber());
         build.setEnvironment(environment);
-        build.setTimestamp(run.getTimestamp);
+        build.setTimestamp(run.getTimestamp());
 
         return build;
     }
