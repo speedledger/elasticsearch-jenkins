@@ -21,6 +21,8 @@ public class Build {
 
     public Build() {
     }
+    
+    timestamp = DATE_FORMATTER.format(build.getTimestamp().getTime());
 
     public Build(String timestamp, int number, String jobName, String result, long startTime, long duration, Map<String, String> environment) {
         this.timestamp = timestamp;
