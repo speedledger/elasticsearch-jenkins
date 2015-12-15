@@ -16,6 +16,10 @@ import io.searchbox.client.config.HttpClientConfig;
 import io.searchbox.core.Index;
 import jenkins.model.Jenkins;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Calendar;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -111,6 +115,7 @@ public class BuildListener extends RunListener<Run> {
         build.setStartTime(run.getStartTimeInMillis());
         build.setNumber(run.getNumber());
         build.setEnvironment(environment);
+        build.setTimestamp(run.getTimestamp());
 
         return build;
     }
