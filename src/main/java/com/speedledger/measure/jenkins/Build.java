@@ -6,6 +6,7 @@ import java.util.Map;
  * Jenkins build.
  */
 public class Build {
+    private String timestamp
     private int number;
     private String jobName;
     private String result;
@@ -72,12 +73,17 @@ public class Build {
     public void setEnvironment(Map<String, String> environment) {
         this.environment = environment;
     }
+    
+    public void setTimestamp(Calendar timestamp) {
+         this.timestamp = DATE_FORMATTER.format(timestamp.getTime());
+  }
 
 
     @Override
     public String toString() {
         return "Build{" +
-                "number=" + number +
+                "@timestamp" + timestamp +
+                ", number=" + number +
                 ", jobName='" + jobName + '\'' +
                 ", result='" + result + '\'' +
                 ", startTime=" + startTime +
