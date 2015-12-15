@@ -25,9 +25,6 @@
             "startTime": {
                 "format": "dateOptionalTime",
                 "type": "date"
-            },
-            "systemProperties": {
-                "type": "nested"
             }
         }
     }
