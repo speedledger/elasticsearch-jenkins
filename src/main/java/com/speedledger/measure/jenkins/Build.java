@@ -31,7 +31,6 @@ public class Build {
         this.startTime = startTime;
         this.duration = duration;
         this.environment = environment;
-        timestamp = DATE_FORMATTER.format(build.getTimestamp().getTime());
     }
 
     public String getJobName() {
